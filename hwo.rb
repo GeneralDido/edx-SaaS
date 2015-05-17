@@ -18,7 +18,6 @@ def max_2_sum (arr)
   end
 end
 
-# http://stackoverflow.com/questions/23572515/check-if-the-sum-of-two-different-numbers-in-an-array-equal-a-variable-number
 def sum_to_n? (arr, n)
   !!arr.uniq.combination(2).detect { |a, b| a + b == n }
 end
