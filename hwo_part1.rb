@@ -35,4 +35,20 @@ def binary_multiple_of_4?(s)
   !/^[10]*00$/.match(s).nil?
 end
 
+class BookInStock
+  attr_accessor :isbn, :price
+
+  def initialize(isbn,price)
+    unless !isbn.empty? and price > 0
+      raise ArgumentError.new("ISBN must be non empty and price > 0, try again.")
+    end
+    @isbn = isbn
+    @price = price
+  end
+
+  def price_as_string
+    sprintf('$%.2f', @price)
+  end
+end
+
 
