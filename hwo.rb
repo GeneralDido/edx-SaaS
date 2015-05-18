@@ -1,6 +1,7 @@
 # method to reload the file
 def reload
     load 'hwo.rb'
+    # Load any other necessary files here ...
 end
 
 def sum (arr)
@@ -48,5 +49,51 @@ class BookInStock
     sprintf('$%.2f', @price)
   end
 end
+
+def palindrome?(s)
+  s = s.downcase.gsub(/\W/, '')
+  if s == s.reverse
+    true
+  else
+    false
+  end
+end
+
+def count_words(s)
+  s = s.downcase.gsub(/(\n|\t)/,'').gsub(/[^\w\s]/,'').gsub(/\s+/, " ").split(" ")
+  count = Hash.new(0)
+  s.each do |word|
+    count[word] += 1
+  end
+  count
+end
+
+def anagram_groups(s)
+  s.split(" ").group_by { |element| element.downcase.chars.sort }.values
+end
+
+def is_anagram?(s1,s2)
+  if s1.downcase.chars.sort(&:casecmp).join == s2.downcase.chars.sort(&:casecmp).join
+    true
+  else
+    false
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
