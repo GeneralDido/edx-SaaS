@@ -1,7 +1,6 @@
 # method to reload the file
 def reload
-    load 'hwo_part1.rb'
-    # Load any other necessary files here ...
+    load 'hwo.rb'
 end
 
 def sum (arr)
